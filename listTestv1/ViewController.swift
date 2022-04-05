@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  listTestv1
 //
-//  Created by Marcelo Araujo on 15/03/22.
+//  Created by Elton Freitas on 15/03/22.
 //
 
 import UIKit
@@ -31,7 +31,6 @@ class ViewController: UIViewController {
         let designer : [String] = arrayDesigner
         return designer
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

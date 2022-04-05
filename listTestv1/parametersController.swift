@@ -8,7 +8,6 @@ class parametersController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var tabela: UITableView!
     var ajuda: String?
-    
     var auxArray = [String]()
     let vC = ViewController()
     var contadorPessoas = 0
@@ -32,41 +31,24 @@ class parametersController: UIViewController, UITableViewDelegate, UITableViewDa
         designer.shuffle()
         
         for i in 0...dev.count - 1 {
-            
-            // Adiciona um integrante ao array auxiliar
+
             auxArray.append(dev[i])
-            
-            // incrementa 1 ao contador
             contadorPessoas += 1
             
-            
-            // Se o valor de contador for igual a quantidade de pessoas por grupo
             if contadorPessoas == 4 && aux <= 2{
-                // Adiciona o grupo de pessoas ao array
                 auxArray.append(designer[aux])
                 grupo.append(auxArray)
-                
-                //print("Grupo \(contadorGrupos) \(auxArray)")
-                // Zera o contador
                 contadorPessoas = 0
-                //Auxiliar para pegar posicoes diferentes do array design
                 aux += 1
-                // Zera o array auxiliar para criar um novo grupo
                 auxArray.removeAll()
-                
                 contadorGrupos += 1;
+                
             }else if contadorPessoas == 3 && aux2 <= 6{
                 auxArray.append(designer[aux2])
                 grupo.append(auxArray)
-                
-                //print("Grupo \(contadorGrupos) \(auxArray)")
-                // Zera o contador
                 contadorPessoas = 0
-                //Auxiliar para pegar posicoes diferentes do array design
                 aux2 += 1
-                // Zera o array auxiliar para criar um novo grupo
                 auxArray.removeAll()
-                
                 contadorGrupos += 1;
             }
         }
@@ -93,25 +75,13 @@ class parametersController: UIViewController, UITableViewDelegate, UITableViewDa
             
             for i in 0...totalPessoas.count - 1 {
                 
-                // Adiciona um integrante ao array auxiliar
                 auxArray.append(totalPessoas[i])
-                
-                // incrementa 1 ao contador
                 contador += 1
                 
-                // Se o valor de contador for igual a quantidade de pessoas por grupo
                 if contador == qtdPessoas {
-                    // Adiciona o grupo de pessoas ao array
                     grupo.append(auxArray)
-                    
-                    // Zera o contador
                     contador = 0
-                    
-                    //print("Grupo \(count) \(auxArray)")
-                    
-                    // Zera o array auxiliar para criar um novo grupo
                     auxArray.removeAll()
-                    
                     count += 1
                 }
                 
@@ -121,112 +91,53 @@ class parametersController: UIViewController, UITableViewDelegate, UITableViewDa
         case 3:
             
             for i in 0...totalPessoas.count - 1 {
-                
-                // Adiciona um integrante ao array auxiliar
                 auxArray.append(totalPessoas[i])
-                
-                // incrementa 1 ao contador
                 contador += 1
-                
-                // Se o valor de contador for igual a quantidade de pessoas por grupo
+            
                 if contador == qtdPessoas {
-                    // Adiciona o grupo de pessoas ao array
                     grupo.append(auxArray)
-                    
-                    // Zera o contador
                     contador = 0
-                    
-                    //print("Grupo \(count) \(auxArray)")
-                    
-                    // Zera o array auxiliar para criar um novo grupo
                     auxArray.removeAll()
-                    
                     count += 1
                 }
-                
-                
             }
             
         case 5:
             
             for i in 0...totalPessoas.count - 1 {
-                
-                // Adiciona um integrante ao array auxiliar
                 auxArray.append(totalPessoas[i])
-                
-                // incrementa 1 ao contador
                 contador += 1
-                
-                // Se o valor de contador for igual a quantidade de pessoas por grupo
                 if contador == qtdPessoas {
-                    // Adiciona o grupo de pessoas ao array
                     grupo.append(auxArray)
-                    
-                    // Zera o contador
                     contador = 0
-                    
-                    //print("Grupo \(count) \(auxArray)")
-                    
-                    // Zera o array auxiliar para criar um novo grupo
                     auxArray.removeAll()
-                    
                     count += 1
                 }
-                
-                
             }
         case 6:
             
             for i in 0...totalPessoas.count - 1 {
-                
-                // Adiciona um integrante ao array auxiliar
                 auxArray.append(totalPessoas[i])
-                
-                // incrementa 1 ao contador
                 contador += 1
                 
-                // Se o valor de contador for igual a quantidade de pessoas por grupo
                 if contador == qtdPessoas {
-                    // Adiciona o grupo de pessoas ao array
                     grupo.append(auxArray)
-                    
-                    // Zera o contador
                     contador = 0
-                    
-                    //print("Grupo \(count) \(auxArray)")
-                    
-                    // Zera o array auxiliar para criar um novo grupo
                     auxArray.removeAll()
-                    
                     count += 1
                 }
-                
-                
             }
             
         case 10:
             
             for i in 0...totalPessoas.count - 1 {
-                
-                // Adiciona um integrante ao array auxiliar
                 auxArray.append(totalPessoas[i])
-                
-                // incrementa 1 ao contador
                 contador += 1
                 
-                // Se o valor de contador for igual a quantidade de pessoas por grupo
                 if contador == qtdPessoas {
-                    // Adiciona o grupo de pessoas ao array
                     grupo.append(auxArray)
-                    
-                    // Zera o contador
                     contador = 0
-                    
-                    //print("Grupo \(count) \(auxArray)")
-                    
-                    // Zera o array auxiliar para criar um novo grupo
                     auxArray.removeAll()
-                    
                     count += 1
                 }
             }
@@ -236,7 +147,6 @@ class parametersController: UIViewController, UITableViewDelegate, UITableViewDa
         
         contador = 0
         count = 1
-        
         listaResultado = grupo
         tabela.reloadData()
         
@@ -257,13 +167,11 @@ class parametersController: UIViewController, UITableViewDelegate, UITableViewDa
     
         }
     
-    
     @IBAction func sortear(_ sender: Any) {
         guard let caixaTexto2 = ajuda else
         {return}
         
         if validacao == true{
-//            lastTry.text = sorteioSemDesigner()
             sorteioComDesigner()
         }else if validacao == false{
             qtdPessoas = Int(caixaTexto2) ?? 0
@@ -273,8 +181,6 @@ class parametersController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    // Configuração TableView
-    // TableView DataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tabela.dequeueReusableCell(withIdentifier: "cell")
         cell?.textLabel?.text = listaResultado[indexPath.section][indexPath.row]
@@ -310,7 +216,6 @@ class parametersController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DismissKeyboard))
         view.addGestureRecognizer(tap)
-        
         
     }
     
